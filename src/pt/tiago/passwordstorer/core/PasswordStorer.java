@@ -13,8 +13,6 @@ public class PasswordStorer {
 			@Override
 			public void run() {
 				MainScreenFrame mainScreen = new MainScreenFrame();
-				mainScreen.init();
-			
 			}
 		});
 
