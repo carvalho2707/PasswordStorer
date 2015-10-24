@@ -4,6 +4,9 @@ public class Constants {
 
 	public static final String USERNAMEE = "tiago";
 	public static final String PASSWORD = "tiago";
+	public static final String DEST_PATH = "C:\\Users\\IT People\\Downloads\\WorkspacePessoal\\";
+	public static final String FILE_PATH = "C:\\Users\\IT People\\Downloads\\WorkspacePessoal\\passwordStorerFile.txt";
+	public static final String FILE_NAME = "passwordStorerFile.txt";
 
 	public static final String APP_NAME = "PasswordStore";
 	public static final Integer WINDOW_HEIGHT = 500;
