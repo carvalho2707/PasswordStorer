@@ -2,6 +2,7 @@ package pt.tiago.passwordstorer.presentation;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Vector;
 
 import javax.swing.JButton;
 import javax.swing.JPanel;
@@ -11,6 +12,7 @@ import javax.swing.SpringLayout;
 
 import pt.tiago.passwordstorer.dao.ResultsDAO;
 import pt.tiago.passwordstorer.util.Constants;
+import pt.tiago.passwordstorer.vo.PasswordVO;
 
 public class AllPanel extends JPanel {
 	MainScreenFrame frame;
@@ -30,10 +32,14 @@ public class AllPanel extends JPanel {
 		springLayout.putConstraint(SpringLayout.SOUTH, backButton, 0, SpringLayout.SOUTH, this);
 		add(backButton);
 		
-		String data[][] = ResultsDAO.getAllData();
-		String column[] = { Constants.COLUMN1, Constants.COLUMN2, Constants.COLUMN3 };
-
-		JTable jt = new JTable(data, column);
+		Vector<PasswordVO> data = ResultsDAO.getAllData();
+		Vector<String> columns = new Vector<String>();
+		columns.add(Constants.COLUMN1);
+		columns.add(Constants.COLUMN2);
+		columns.add(Constants.COLUMN3);
+		columns.add(Constants.COLUMN4);
+		
+		JTable jt = new JTable(data, columns);
 		
 		JScrollPane scrollPane = new JScrollPane(jt);
 		springLayout.putConstraint(SpringLayout.NORTH, scrollPane, 5, SpringLayout.NORTH, this);
