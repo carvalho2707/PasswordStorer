@@ -9,6 +9,7 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.SpringLayout;
+import javax.swing.table.DefaultTableModel;
 
 import pt.tiago.passwordstorer.dao.ResultsDAO;
 import pt.tiago.passwordstorer.util.Constants;
@@ -32,14 +33,17 @@ public class AllPanel extends JPanel {
 		springLayout.putConstraint(SpringLayout.SOUTH, backButton, 0, SpringLayout.SOUTH, this);
 		add(backButton);
 		
-		Vector<PasswordVO> data = ResultsDAO.getAllData();
+
+		Vector<Vector<String>> data = ResultsDAO.getAllData();
 		Vector<String> columns = new Vector<String>();
 		columns.add(Constants.COLUMN1);
 		columns.add(Constants.COLUMN2);
 		columns.add(Constants.COLUMN3);
 		columns.add(Constants.COLUMN4);
 		
-		JTable jt = new JTable(data, columns);
+		DefaultTableModel model = new DefaultTableModel(data, columns);
+		
+		JTable jt = new JTable(model);
 		
 		JScrollPane scrollPane = new JScrollPane(jt);
 		springLayout.putConstraint(SpringLayout.NORTH, scrollPane, 5, SpringLayout.NORTH, this);

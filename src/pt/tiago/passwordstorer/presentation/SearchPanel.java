@@ -11,10 +11,10 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.SpringLayout;
+import javax.swing.table.DefaultTableModel;
 
 import pt.tiago.passwordstorer.dao.ResultsDAO;
 import pt.tiago.passwordstorer.util.Constants;
-import pt.tiago.passwordstorer.vo.PasswordVO;
 
 public class SearchPanel extends JPanel {
 	/**
@@ -40,14 +40,18 @@ public class SearchPanel extends JPanel {
 		springLayout.putConstraint(SpringLayout.EAST, clearButton, -118, SpringLayout.EAST, this);
 		add(clearButton);
 
-		Vector<PasswordVO> data = ResultsDAO.getAllData();
+
+		
+		Vector<Vector<String>> data = ResultsDAO.getAllData();
 		Vector<String> columns = new Vector<String>();
 		columns.add(Constants.COLUMN1);
 		columns.add(Constants.COLUMN2);
 		columns.add(Constants.COLUMN3);
 		columns.add(Constants.COLUMN4);
 		
-		jt = new JTable(data, columns);
+		DefaultTableModel model = new DefaultTableModel(data, columns);
+		
+		jt = new JTable(model);
 
 		JScrollPane scrollPane = new JScrollPane(jt);
 		springLayout.putConstraint(SpringLayout.NORTH, scrollPane, 5,
@@ -63,6 +67,16 @@ public class SearchPanel extends JPanel {
 				nameTextField.setText("");
 				usernameTextField.setText("");
 				othersTextField.setText("");
+				
+				Vector<Vector<String>> data = ResultsDAO.getAllData();
+				Vector<String> columns = new Vector<String>();
+				columns.add(Constants.COLUMN1);
+				columns.add(Constants.COLUMN2);
+				columns.add(Constants.COLUMN3);
+				columns.add(Constants.COLUMN4);
+				
+				DefaultTableModel model = new DefaultTableModel(data, columns);
+				jt.setModel(model);
 			}
 		});
 
@@ -107,7 +121,16 @@ public class SearchPanel extends JPanel {
 		springLayout.putConstraint(SpringLayout.WEST, clearButton, 6, SpringLayout.EAST, searchButton);
 		searchButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-			//TODO
+				Vector<Vector<String>> data = ResultsDAO.searchData(nameTextField.getText(), usernameTextField.getText(), othersTextField.getText());
+				Vector<String> columns = new Vector<String>();
+				columns.add(Constants.COLUMN1);
+				columns.add(Constants.COLUMN2);
+				columns.add(Constants.COLUMN3);
+				columns.add(Constants.COLUMN4);
+				
+				DefaultTableModel model = new DefaultTableModel(data, columns);
+				SearchPanel.this.jt.setModel(model);
+				
 			}
 		});
 		springLayout.putConstraint(SpringLayout.NORTH, searchButton, 0, SpringLayout.NORTH, clearButton);
@@ -129,4 +152,5 @@ public class SearchPanel extends JPanel {
 		add(backButton);
 		frame.setVisible(true);
 	}
+	
 }

@@ -2,7 +2,8 @@ package pt.tiago.passwordstorer.vo;
 
 import java.util.Vector;
 
-public class PasswordVO extends Vector<String> {
+
+public class PasswordVO {
 	private static final long serialVersionUID = 4211662433294013345L;
 	private String name;
 	private String username;
@@ -48,5 +49,15 @@ public class PasswordVO extends Vector<String> {
 	public void setOther(String other) {
 		this.other = other;
 	}
+	
+	public Vector<String> getAsVector(){
+		Vector<String> vector = new Vector<String>(4);
+		vector.add(name);
+		vector.add(username);
+		vector.add(password);
+		vector.add(other);
+		return vector;
+	}
 
+	
 }
