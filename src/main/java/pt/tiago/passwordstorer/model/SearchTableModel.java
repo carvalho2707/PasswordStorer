@@ -1,10 +1,10 @@
-package pt.tiago.passwordstorer.model;
+package main.java.pt.tiago.passwordstorer.model;
 
 import java.util.Vector;
 
 import javax.swing.table.AbstractTableModel;
 
-import pt.tiago.passwordstorer.vo.PasswordVO;
+import main.java.pt.tiago.passwordstorer.vo.PasswordVO;
 
 public class SearchTableModel extends AbstractTableModel {
 	private static final long serialVersionUID = -6435656131622502477L;

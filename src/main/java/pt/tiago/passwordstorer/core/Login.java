@@ -1,6 +1,6 @@
-package pt.tiago.passwordstorer.core;
+package main.java.pt.tiago.passwordstorer.core;
 
-import pt.tiago.passwordstorer.util.Constants;
+import main.java.pt.tiago.passwordstorer.util.Constants;
 
 public class Login {
 

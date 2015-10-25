@@ -1,8 +1,8 @@
-package pt.tiago.passwordstorer.core;
+package main.java.pt.tiago.passwordstorer.core;
 
 import java.awt.EventQueue;
 
-import pt.tiago.passwordstorer.presentation.MainScreenFrame;
+import main.java.pt.tiago.passwordstorer.presentation.MainScreenFrame;
 
 public class PasswordStorer {
 

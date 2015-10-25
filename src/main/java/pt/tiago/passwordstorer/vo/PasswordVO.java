@@ -1,10 +1,9 @@
-package pt.tiago.passwordstorer.vo;
+package main.java.pt.tiago.passwordstorer.vo;
 
 import java.util.Vector;
 
 
 public class PasswordVO {
-	private static final long serialVersionUID = 4211662433294013345L;
 	private String name;
 	private String username;
 	private String password;

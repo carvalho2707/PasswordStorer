@@ -1,4 +1,4 @@
-package pt.tiago.passwordstorer.presentation;
+package main.java.pt.tiago.passwordstorer.presentation;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -13,8 +13,9 @@ import javax.swing.JTextField;
 import javax.swing.SpringLayout;
 import javax.swing.table.DefaultTableModel;
 
-import pt.tiago.passwordstorer.dao.ResultsDAO;
-import pt.tiago.passwordstorer.util.Constants;
+import main.java.pt.tiago.passwordstorer.bo.PresentationBO;
+import main.java.pt.tiago.passwordstorer.dao.ResultsDAO;
+import main.java.pt.tiago.passwordstorer.util.Constants;
 
 public class SearchPanel extends JPanel {
 	/**
@@ -42,7 +43,7 @@ public class SearchPanel extends JPanel {
 
 
 		
-		Vector<Vector<String>> data = ResultsDAO.getAllData();
+		Vector<Vector<String>> data = PresentationBO.getDomain();
 		Vector<String> columns = new Vector<String>();
 		columns.add(Constants.COLUMN1);
 		columns.add(Constants.COLUMN2);
@@ -68,7 +69,7 @@ public class SearchPanel extends JPanel {
 				usernameTextField.setText("");
 				othersTextField.setText("");
 				
-				Vector<Vector<String>> data = ResultsDAO.getAllData();
+				Vector<Vector<String>> data = PresentationBO.getDomain();
 				Vector<String> columns = new Vector<String>();
 				columns.add(Constants.COLUMN1);
 				columns.add(Constants.COLUMN2);

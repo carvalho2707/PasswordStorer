@@ -1,4 +1,4 @@
-package pt.tiago.passwordstorer.presentation;
+package main.java.pt.tiago.passwordstorer.presentation;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -19,8 +19,8 @@ import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import javax.swing.border.LineBorder;
 
-import pt.tiago.passwordstorer.core.Login;
-import pt.tiago.passwordstorer.util.Constants;
+import main.java.pt.tiago.passwordstorer.core.Login;
+import main.java.pt.tiago.passwordstorer.util.Constants;
 
 public class LoginDialog extends JDialog {
 

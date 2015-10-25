@@ -1,4 +1,4 @@
-package pt.tiago.passwordstorer.presentation;
+package main.java.pt.tiago.passwordstorer.presentation;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -11,9 +11,8 @@ import javax.swing.JTable;
 import javax.swing.SpringLayout;
 import javax.swing.table.DefaultTableModel;
 
-import pt.tiago.passwordstorer.dao.ResultsDAO;
-import pt.tiago.passwordstorer.util.Constants;
-import pt.tiago.passwordstorer.vo.PasswordVO;
+import main.java.pt.tiago.passwordstorer.bo.PresentationBO;
+import main.java.pt.tiago.passwordstorer.util.Constants;
 
 public class AllPanel extends JPanel {
 	MainScreenFrame frame;
@@ -34,7 +33,7 @@ public class AllPanel extends JPanel {
 		add(backButton);
 		
 
-		Vector<Vector<String>> data = ResultsDAO.getAllData();
+		Vector<Vector<String>> data = PresentationBO.getDomain();
 		Vector<String> columns = new Vector<String>();
 		columns.add(Constants.COLUMN1);
 		columns.add(Constants.COLUMN2);

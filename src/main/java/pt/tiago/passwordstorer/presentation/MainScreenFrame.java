@@ -1,10 +1,9 @@
-package pt.tiago.passwordstorer.presentation;
+package main.java.pt.tiago.passwordstorer.presentation;
 
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.List;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -12,9 +11,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 
-import pt.tiago.passwordstorer.bo.PresentationBO;
-import pt.tiago.passwordstorer.util.Constants;
-import pt.tiago.passwordstorer.vo.PasswordVO;
+import main.java.pt.tiago.passwordstorer.util.Constants;
 
 public class MainScreenFrame extends JFrame {
 	private static final long serialVersionUID = 1897728166830013009L;
@@ -23,7 +20,6 @@ public class MainScreenFrame extends JFrame {
 	public JPanel searchPanel;
 	public JPanel deletePanel;
 	public JPanel addPanel;
-	public List<PasswordVO> passList;
 
 	public MainScreenFrame() {
 		setTitle(Constants.APP_NAME);
@@ -35,7 +31,6 @@ public class MainScreenFrame extends JFrame {
 		// false - test
 		loginDlg.setVisible(false);
 		
-		passList = PresentationBO.getDomain();
 
 		// create grid layout with 3 rows , 2 columns with horizontal
 		// and vertical gap set to 10
