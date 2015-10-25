@@ -14,7 +14,6 @@ import javax.swing.SpringLayout;
 import javax.swing.table.DefaultTableModel;
 
 import main.java.pt.tiago.passwordstorer.bo.PresentationBO;
-import main.java.pt.tiago.passwordstorer.dao.ResultsDAO;
 import main.java.pt.tiago.passwordstorer.util.Constants;
 
 public class SearchPanel extends JPanel {
@@ -122,7 +121,7 @@ public class SearchPanel extends JPanel {
 		springLayout.putConstraint(SpringLayout.WEST, clearButton, 6, SpringLayout.EAST, searchButton);
 		searchButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Vector<Vector<String>> data = ResultsDAO.searchData(nameTextField.getText(), usernameTextField.getText(), othersTextField.getText());
+				Vector<Vector<String>> data = PresentationBO.searchData(nameTextField.getText(), usernameTextField.getText(), othersTextField.getText());
 				Vector<String> columns = new Vector<String>();
 				columns.add(Constants.COLUMN1);
 				columns.add(Constants.COLUMN2);
