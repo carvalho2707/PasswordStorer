@@ -46,7 +46,13 @@ public class MainScreenFrame extends JFrame {
 		lblNewLabel.setForeground(Color.ORANGE);
 		mainPanel.add(lblNewLabel);
 
-		JButton btnAdd = new JButton(Constants.BUTTON_ADD);
+		JButton btnAdd = new JButton(Constants.BUTTON_ADD_RECORD);
+		btnAdd.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				MainScreenFrame.this.remove(MainScreenFrame.this.mainPanel);
+				MainScreenFrame.this.addPanel = new AddPanel(MainScreenFrame.this);
+			}
+		});
 		btnAdd.setBounds(31, 334, 101, 34);
 		// add buttons to the panel
 		mainPanel.add(btnAdd);
