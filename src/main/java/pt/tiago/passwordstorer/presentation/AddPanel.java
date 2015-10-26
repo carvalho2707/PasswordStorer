@@ -8,6 +8,7 @@ import java.util.Vector;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import javax.swing.SpringLayout;
 
@@ -20,7 +21,7 @@ public class AddPanel extends JPanel {
 	MainScreenFrame frame;
 	private JTextField nameField;
 	private JTextField usernameField;
-	private JTextField passwordField;
+	private JPasswordField passwordField;
 	private JTextField othersField;
 
 	/**
@@ -79,7 +80,7 @@ public class AddPanel extends JPanel {
 		add(usernameField);
 		usernameField.setColumns(10);
 		
-		passwordField = new JTextField();
+		passwordField = new JPasswordField();
 		springLayout.putConstraint(SpringLayout.WEST, passwordField, 53, SpringLayout.EAST, passwordLabel);
 		springLayout.putConstraint(SpringLayout.SOUTH, passwordField, 0, SpringLayout.SOUTH, passwordLabel);
 		springLayout.putConstraint(SpringLayout.EAST, passwordField, -75, SpringLayout.EAST, this);
@@ -111,7 +112,7 @@ public class AddPanel extends JPanel {
 		addButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Vector<Vector<String>> passwordList = PresentationBO.getDomain();
-				PasswordVO newAccount = new PasswordVO(nameField.getText(), usernameField.getText(), passwordField.getText(), othersField.getText());
+				PasswordVO newAccount = new PasswordVO(nameField.getText(), usernameField.getText(), new String(passwordField.getPassword()), othersField.getText());
 				passwordList.add(newAccount.getAsVector());
 				PresentationBO.saveFile(passwordList);
 				AddPanel.this.frame.remove(AddPanel.this);

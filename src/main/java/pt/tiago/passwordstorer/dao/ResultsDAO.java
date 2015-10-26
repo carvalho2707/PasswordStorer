@@ -22,7 +22,7 @@ public class ResultsDAO {
 		Gson gson = new Gson();
 		JsonReader reader = null;
 		try {
-			reader = new JsonReader(new FileReader(Constants.FILE_PATH));
+			reader = new JsonReader(new FileReader(Constants.FILE_PATH_TRUE));
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
@@ -36,7 +36,7 @@ public class ResultsDAO {
 
 		FileWriter writer;
 		try {
-			writer = new FileWriter(Constants.FILE_PATH);
+			writer = new FileWriter(Constants.FILE_PATH_TRUE);
 			writer.write(jsonString);
 			writer.close();
 		} catch (IOException e) {
