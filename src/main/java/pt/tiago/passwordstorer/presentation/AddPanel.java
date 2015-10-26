@@ -1,6 +1,9 @@
 package main.java.pt.tiago.passwordstorer.presentation;
 
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.Vector;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -8,10 +11,9 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SpringLayout;
 
+import main.java.pt.tiago.passwordstorer.bo.PresentationBO;
 import main.java.pt.tiago.passwordstorer.util.Constants;
-
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
+import main.java.pt.tiago.passwordstorer.vo.PasswordVO;
 
 public class AddPanel extends JPanel {
 	private static final long serialVersionUID = 3486544837941562990L;
@@ -95,7 +97,7 @@ public class AddPanel extends JPanel {
 		backButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				AddPanel.this.frame.remove(AddPanel.this);
-				AddPanel.this.frame.allPanel.setVisible(false);
+				AddPanel.this.frame.addPanel.setVisible(false);
 				AddPanel.this.frame.getContentPane().add(AddPanel.this.frame.mainPanel);
 				AddPanel.this.frame.mainPanel.setVisible(true);
 				AddPanel.this.frame.repaint();
@@ -108,7 +110,15 @@ public class AddPanel extends JPanel {
 		JButton addButton = new JButton(Constants.BUTTON_ADD);
 		addButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-//				AddPanel.this.frame.m
+				Vector<Vector<String>> passwordList = PresentationBO.getDomain();
+				PasswordVO newAccount = new PasswordVO(nameField.getText(), usernameField.getText(), passwordField.getText(), othersField.getText());
+				passwordList.add(newAccount.getAsVector());
+				PresentationBO.saveFile(passwordList);
+				AddPanel.this.frame.remove(AddPanel.this);
+				AddPanel.this.frame.addPanel.setVisible(false);
+				AddPanel.this.frame.getContentPane().add(AddPanel.this.frame.mainPanel);
+				AddPanel.this.frame.mainPanel.setVisible(true);
+				AddPanel.this.frame.repaint();
 			}
 		});
 		springLayout.putConstraint(SpringLayout.NORTH, addButton, 0, SpringLayout.NORTH, backButton);

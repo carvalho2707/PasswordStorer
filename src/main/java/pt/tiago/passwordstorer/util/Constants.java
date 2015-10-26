@@ -4,7 +4,7 @@ public class Constants {
 
 	public static final String USERNAMEE = "tiago";
 	public static final String PASSWORD = "tiago";
-	public static final String DEST_PATH = "C:\\Users\\IT People\\Downloads\\WorkspacePessoal\\PasswordStorer\\src\\main\\resources\\";
+	public static final String DEST_PATH = "C:\\Users\\IT People\\Downloads\\WorkspacePessoal\\PasswordStorer\\src\\main\\resources\\passwordStorerFile2.json";
 	public static final String FILE_PATH = "C:\\Users\\IT People\\Downloads\\WorkspacePessoal\\PasswordStorer\\src\\main\\resources\\passwordStorerFile.json";
 	public static final String FILE_NAME = "passwordStorerFile.json";
 
