@@ -15,6 +15,7 @@ import javax.swing.table.DefaultTableModel;
 
 import main.java.pt.tiago.passwordstorer.bo.PresentationBO;
 import main.java.pt.tiago.passwordstorer.util.Constants;
+import java.awt.Font;
 
 public class SearchPanel extends JPanel {
 	/**
@@ -37,7 +38,7 @@ public class SearchPanel extends JPanel {
 		setLayout(springLayout);
 
 		JButton clearButton = new JButton(Constants.BUTTON_CLEAR);
-		springLayout.putConstraint(SpringLayout.EAST, clearButton, -118, SpringLayout.EAST, this);
+		springLayout.putConstraint(SpringLayout.EAST, clearButton, -345, SpringLayout.EAST, this);
 		add(clearButton);
 
 
@@ -83,22 +84,26 @@ public class SearchPanel extends JPanel {
 		frame.getContentPane().add(this);
 		
 		JLabel nameLabel = new JLabel(Constants.SEARCH_LABEL_NAME);
+		springLayout.putConstraint(SpringLayout.NORTH, nameLabel, 6, SpringLayout.SOUTH, scrollPane);
+		nameLabel.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		add(nameLabel);
 		
 		nameTextField = new JTextField();
-		springLayout.putConstraint(SpringLayout.WEST, nameLabel, 0, SpringLayout.WEST, nameTextField);
 		springLayout.putConstraint(SpringLayout.SOUTH, nameLabel, -6, SpringLayout.NORTH, nameTextField);
+		springLayout.putConstraint(SpringLayout.EAST, nameLabel, 80, SpringLayout.WEST, nameTextField);
+		springLayout.putConstraint(SpringLayout.WEST, nameTextField, 296, SpringLayout.WEST, this);
 		add(nameTextField);
 		nameTextField.setColumns(10);
 		
 		JLabel usernameLabel = new JLabel(Constants.SEARCH_LABEL_USERNAME);
-		springLayout.putConstraint(SpringLayout.NORTH, usernameLabel, 28, SpringLayout.SOUTH, scrollPane);
+		springLayout.putConstraint(SpringLayout.NORTH, usernameLabel, 6, SpringLayout.NORTH, nameLabel);
+		springLayout.putConstraint(SpringLayout.WEST, usernameLabel, 6, SpringLayout.EAST, nameLabel);
+		usernameLabel.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		add(usernameLabel);
 		
 		usernameTextField = new JTextField();
-		springLayout.putConstraint(SpringLayout.WEST, usernameLabel, 0, SpringLayout.WEST, usernameTextField);
-		springLayout.putConstraint(SpringLayout.NORTH, usernameTextField, 50, SpringLayout.SOUTH, scrollPane);
-		springLayout.putConstraint(SpringLayout.EAST, usernameTextField, -199, SpringLayout.EAST, this);
+		springLayout.putConstraint(SpringLayout.NORTH, usernameTextField, 47, SpringLayout.SOUTH, scrollPane);
+		springLayout.putConstraint(SpringLayout.WEST, usernameTextField, 388, SpringLayout.WEST, this);
 		springLayout.putConstraint(SpringLayout.NORTH, clearButton, 25, SpringLayout.SOUTH, usernameTextField);
 		springLayout.putConstraint(SpringLayout.NORTH, nameTextField, 0, SpringLayout.NORTH, usernameTextField);
 		springLayout.putConstraint(SpringLayout.EAST, nameTextField, -6, SpringLayout.WEST, usernameTextField);
@@ -106,7 +111,8 @@ public class SearchPanel extends JPanel {
 		add(usernameTextField);
 		
 		JLabel othersLabel = new JLabel(Constants.SEARCH_LABEL_OTHER);
-		springLayout.putConstraint(SpringLayout.NORTH, othersLabel, 28, SpringLayout.SOUTH, scrollPane);
+		springLayout.putConstraint(SpringLayout.NORTH, othersLabel, 6, SpringLayout.NORTH, nameLabel);
+		othersLabel.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		add(othersLabel);
 		
 		othersTextField = new JTextField();
@@ -117,7 +123,7 @@ public class SearchPanel extends JPanel {
 		add(othersTextField);
 		
 		JButton searchButton = new JButton(Constants.BUTTON_SEARCH);
-		springLayout.putConstraint(SpringLayout.EAST, searchButton, -210, SpringLayout.EAST, this);
+		springLayout.putConstraint(SpringLayout.EAST, searchButton, -437, SpringLayout.EAST, this);
 		springLayout.putConstraint(SpringLayout.WEST, clearButton, 6, SpringLayout.EAST, searchButton);
 		searchButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -137,7 +143,8 @@ public class SearchPanel extends JPanel {
 		add(searchButton);
 		
 		JButton backButton = new JButton(Constants.BUTTON_BACK);
-		springLayout.putConstraint(SpringLayout.EAST, backButton, -306, SpringLayout.EAST, this);
+		springLayout.putConstraint(SpringLayout.WEST, nameLabel, 0, SpringLayout.WEST, backButton);
+		springLayout.putConstraint(SpringLayout.WEST, backButton, 312, SpringLayout.WEST, this);
 		springLayout.putConstraint(SpringLayout.WEST, searchButton, 7, SpringLayout.EAST, backButton);
 		backButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {

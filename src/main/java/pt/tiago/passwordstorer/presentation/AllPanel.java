@@ -28,8 +28,10 @@ public class AllPanel extends JPanel {
 		setLayout(springLayout);
 		
 		JButton backButton = new JButton(Constants.BUTTON_BACK);
+		springLayout.putConstraint(SpringLayout.NORTH, backButton, -50, SpringLayout.SOUTH, this);
 		springLayout.putConstraint(SpringLayout.WEST, backButton, 0, SpringLayout.WEST, this);
 		springLayout.putConstraint(SpringLayout.SOUTH, backButton, 0, SpringLayout.SOUTH, this);
+		springLayout.putConstraint(SpringLayout.EAST, backButton, 95, SpringLayout.WEST, this);
 		add(backButton);
 		
 
@@ -47,7 +49,7 @@ public class AllPanel extends JPanel {
 		JScrollPane scrollPane = new JScrollPane(jt);
 		springLayout.putConstraint(SpringLayout.NORTH, scrollPane, 5, SpringLayout.NORTH, this);
 		springLayout.putConstraint(SpringLayout.WEST, scrollPane, 3, SpringLayout.WEST, this);
-		springLayout.putConstraint(SpringLayout.SOUTH, scrollPane, -23, SpringLayout.SOUTH, this);
+		springLayout.putConstraint(SpringLayout.SOUTH, scrollPane, -101, SpringLayout.SOUTH, this);
 		springLayout.putConstraint(SpringLayout.EAST, scrollPane, 3, SpringLayout.EAST, this);
 		add(scrollPane);
 		
@@ -55,13 +57,13 @@ public class AllPanel extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				AllPanel.this.frame.remove(AllPanel.this);
 				AllPanel.this.frame.allPanel.setVisible(false);
-				AllPanel.this.frame.add(AllPanel.this.frame.mainPanel);
+				AllPanel.this.frame.getContentPane().add(AllPanel.this.frame.mainPanel);
 				AllPanel.this.frame.mainPanel.setVisible(true);
 				AllPanel.this.frame.repaint();
 			}
 		});
 
-		frame.add(this);
+		frame.getContentPane().add(this);
 		frame.setVisible(true);
 	}
 }

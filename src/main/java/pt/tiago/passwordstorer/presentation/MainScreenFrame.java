@@ -41,7 +41,7 @@ public class MainScreenFrame extends JFrame {
 
 		JLabel lblNewLabel = new JLabel("Password Storer");
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel.setBounds(31, 40, 440, 96);
+		lblNewLabel.setBounds(210, 59, 440, 96);
 		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 45));
 		lblNewLabel.setForeground(Color.ORANGE);
 		mainPanel.add(lblNewLabel);
@@ -53,7 +53,7 @@ public class MainScreenFrame extends JFrame {
 				MainScreenFrame.this.addPanel = new AddPanel(MainScreenFrame.this);
 			}
 		});
-		btnAdd.setBounds(31, 334, 101, 34);
+		btnAdd.setBounds(210, 333, 101, 34);
 		// add buttons to the panel
 		mainPanel.add(btnAdd);
 		JButton btnSearch = new JButton(Constants.BUTTON_SEARCH);
@@ -63,13 +63,13 @@ public class MainScreenFrame extends JFrame {
 				MainScreenFrame.this.searchPanel = new SearchPanel(MainScreenFrame.this);
 			}
 		});
-		btnSearch.setBounds(142, 334, 83, 34);
+		btnSearch.setBounds(321, 333, 83, 34);
 		mainPanel.add(btnSearch);
 		JButton btnDelete = new JButton(Constants.BUTTON_DELETE);
-		btnDelete.setBounds(235, 334, 128, 34);
+		btnDelete.setBounds(414, 333, 128, 34);
 		mainPanel.add(btnDelete);
 		JButton btnAll = new JButton(Constants.BUTTON_ALL);
-		btnAll.setBounds(373, 334, 83, 34);
+		btnAll.setBounds(552, 333, 83, 34);
 		mainPanel.add(btnAll);
 
 		btnAll.addActionListener(new ActionListener() {
