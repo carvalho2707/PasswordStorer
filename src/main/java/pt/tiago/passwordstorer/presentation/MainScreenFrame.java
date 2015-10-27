@@ -29,7 +29,7 @@ public class MainScreenFrame extends JFrame {
 		setLocationRelativeTo(null);
 		LoginDialog loginDlg = new LoginDialog(MainScreenFrame.this);
 		// false - test
-		loginDlg.setVisible(false);
+		loginDlg.setVisible(true);
 		
 
 		// create grid layout with 3 rows , 2 columns with horizontal

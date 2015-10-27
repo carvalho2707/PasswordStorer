@@ -13,10 +13,13 @@ import javax.swing.table.DefaultTableModel;
 
 import main.java.pt.tiago.passwordstorer.bo.PresentationBO;
 import main.java.pt.tiago.passwordstorer.util.Constants;
+import javax.swing.JCheckBox;
+import java.awt.Font;
 
 public class AllPanel extends JPanel {
 	MainScreenFrame frame;
 	private static final long serialVersionUID = 1457643519564804289L;
+	JCheckBox ctrlPasswordCheckBox;
 
 	/**
 	 * Create the panel.
@@ -64,6 +67,23 @@ public class AllPanel extends JPanel {
 		});
 
 		frame.getContentPane().add(this);
+		
+		ctrlPasswordCheckBox = new JCheckBox(Constants.CONTROL_CHECKBOX_ON);
+		ctrlPasswordCheckBox.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(AllPanel.this.ctrlPasswordCheckBox.isSelected()){
+					ctrlPasswordCheckBox.setText(Constants.CONTROL_CHECKBOX_OFF);
+				}else{
+					ctrlPasswordCheckBox.setText(Constants.CONTROL_CHECKBOX_ON);
+				}
+			}
+		});
+		ctrlPasswordCheckBox.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		springLayout.putConstraint(SpringLayout.NORTH, ctrlPasswordCheckBox, 0, SpringLayout.NORTH, backButton);
+		springLayout.putConstraint(SpringLayout.WEST, ctrlPasswordCheckBox, 39, SpringLayout.EAST, backButton);
+		springLayout.putConstraint(SpringLayout.SOUTH, ctrlPasswordCheckBox, 0, SpringLayout.SOUTH, backButton);
+		springLayout.putConstraint(SpringLayout.EAST, ctrlPasswordCheckBox, 212, SpringLayout.EAST, backButton);
+		add(ctrlPasswordCheckBox);
 		frame.setVisible(true);
 	}
 }

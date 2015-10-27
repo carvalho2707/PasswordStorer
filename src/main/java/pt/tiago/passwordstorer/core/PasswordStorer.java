@@ -12,6 +12,7 @@ public class PasswordStorer {
 
 			@Override
 			public void run() {
+				@SuppressWarnings("unused")
 				MainScreenFrame mainScreen = new MainScreenFrame();
 			}
 		});

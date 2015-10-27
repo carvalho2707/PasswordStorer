@@ -2,8 +2,9 @@ package main.java.pt.tiago.passwordstorer.util;
 
 public class Constants {
 
-	public static final String USERNAMEE = "tiago";
-	public static final String PASSWORD = "tiago";
+	public static final String USERNAMEE = "xxxx";
+	public static final String PASSWORD = "xxxx";
+	public static final String KEY = "xxxx";
 	public static final String DEST_PATH = "C:\\Users\\IT People\\Downloads\\WorkspacePessoal\\passwordStorerFile.json";
 	public static final String FILE_PATH = "C:\\Users\\IT People\\Downloads\\WorkspacePessoal\\passwordStorerFile.json";
 	public static final String FILE_PATH_TRUE = "C:\\Users\\IT People\\Downloads\\WorkspacePessoal\\passwordStorerFile.json";
@@ -35,10 +36,13 @@ public class Constants {
 	public static final String SEARCH_LABEL_NAME = "Name";
 	public static final String SEARCH_LABEL_USERNAME = "Username";
 	public static final String SEARCH_LABEL_OTHER = "Others";
-	
+
 	public static final String ADD_LABEL_NAME = "Name";
 	public static final String ADD_LABEEL_USERNAME = "Username";
 	public static final String ADD_LABEL_PASSWORD = "Password";
 	public static final String ADD_LABEL_OTHERS = "Others";
 	public static final String ADD_LABEL_TITLE = "Add Record";
+
+	public static final String CONTROL_CHECKBOX_ON = "Show Password";
+	public static final String CONTROL_CHECKBOX_OFF = "Hide Password";
 }

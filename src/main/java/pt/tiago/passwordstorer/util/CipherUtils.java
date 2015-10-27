@@ -22,7 +22,7 @@ public class CipherUtils {
         // encrypt the text
         cipher.init(Cipher.ENCRYPT_MODE, aesKey);
         byte[] encrypted = cipher.doFinal(toEncrypt.getBytes("UTF8"));
-        System.err.println(DatatypeConverter.printBase64Binary(encrypted));
+        //System.err.println(DatatypeConverter.printBase64Binary(encrypted));
 		return new String(DatatypeConverter.printBase64Binary(encrypted));
 	}
 	
@@ -34,7 +34,7 @@ public class CipherUtils {
          //decrypt the text
         cipher.init(Cipher.DECRYPT_MODE, aesKey);
         String decrypted = new String(cipher.doFinal(DatatypeConverter.parseBase64Binary(toEncrypt)));
-        System.err.println(decrypted);
+        //System.err.println(decrypted);
 		return new String(decrypted);
 	}
 
