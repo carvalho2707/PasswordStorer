@@ -2,9 +2,9 @@ package main.java.pt.tiago.passwordstorer.util;
 
 public class Constants {
 
-	public static final String USERNAMEE = "tiago";
-	public static final String PASSWORD = "3435";
-	public static final String KEY = "Bar12345Bar12345";
+	public static final String USERNAMEE = "xxxxx";
+	public static final String PASSWORD = "xxxxx";
+	public static final String KEY = "xxxxxx";
 	public static final String DEST_PATH = "C:\\Users\\IT People\\Downloads\\WorkspacePessoal\\passwordStorerFile.json";
 	public static final String FILE_PATH = "C:\\Users\\IT People\\Downloads\\WorkspacePessoal\\passwordStorerFile.json";
 	public static final String FILE_PATH_TRUE = "C:\\Users\\IT People\\Downloads\\WorkspacePessoal\\passwordStorerFile.json";

@@ -4,6 +4,7 @@ import java.io.UnsupportedEncodingException;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Vector;
 
@@ -13,6 +14,7 @@ import javax.crypto.NoSuchPaddingException;
 
 import main.java.pt.tiago.passwordstorer.dao.ResultsDAO;
 import main.java.pt.tiago.passwordstorer.util.CipherUtils;
+import main.java.pt.tiago.passwordstorer.util.PasswordVOComparator;
 import main.java.pt.tiago.passwordstorer.vo.PasswordVO;
 
 public class PresentationBO {
@@ -30,6 +32,7 @@ public class PresentationBO {
 				e.printStackTrace();
 			}
 		}
+		Collections.sort(passwordList, new PasswordVOComparator());
 		Vector<Vector<String>> rows = new Vector<Vector<String>>();
 		Vector<String> temp;
 		for (PasswordVO pass : passwordList) {
