@@ -15,6 +15,7 @@ import javax.crypto.NoSuchPaddingException;
 import main.java.pt.tiago.passwordstorer.dao.ResultsDAO;
 import main.java.pt.tiago.passwordstorer.util.CipherUtils;
 import main.java.pt.tiago.passwordstorer.util.PasswordVOComparator;
+import main.java.pt.tiago.passwordstorer.util.SearchType;
 import main.java.pt.tiago.passwordstorer.vo.PasswordVO;
 
 public class PresentationBO {
@@ -88,6 +89,31 @@ public class PresentationBO {
 			domainList.add(passwordVO);
 		}
 		ResultsDAO.saveFile(domainList);
+	}
+
+	public static Vector<Vector<String>> getDomain(SearchType type) {
+		List<PasswordVO> passwordList = ResultsDAO.getAllData2();
+		for (PasswordVO passVo : passwordList) {
+			String decrupted;
+			try {
+				decrupted = CipherUtils.decrypt(passVo.getPassword());
+				passVo.setPassword(decrupted);
+			} catch (InvalidKeyException | NoSuchAlgorithmException
+					| NoSuchPaddingException | IllegalBlockSizeException
+					| BadPaddingException e) {
+				e.printStackTrace();
+			}
+		}
+		Collections.sort(passwordList, new PasswordVOComparator());
+		Vector<Vector<String>> rows = new Vector<Vector<String>>();
+		Vector<String> temp;
+		for (PasswordVO pass : passwordList) {
+			if(pass.getName().contains(type.getSearchString())){
+				temp = pass.getAsVector();
+				rows.add(temp);
+			}
+		}
+		return rows;
 	}
 
 }

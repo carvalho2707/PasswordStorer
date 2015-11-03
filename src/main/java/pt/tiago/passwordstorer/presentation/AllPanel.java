@@ -13,7 +13,10 @@ import javax.swing.table.DefaultTableModel;
 
 import main.java.pt.tiago.passwordstorer.bo.PresentationBO;
 import main.java.pt.tiago.passwordstorer.util.Constants;
+import main.java.pt.tiago.passwordstorer.util.SearchType;
+
 import javax.swing.JCheckBox;
+
 import java.awt.Font;
 
 public class AllPanel extends JPanel {
@@ -25,7 +28,7 @@ public class AllPanel extends JPanel {
 	 * Create the panel.
 	 * @param panel 
 	 */
-	public AllPanel(MainScreenFrame frame) {
+	public AllPanel(MainScreenFrame frame, SearchType all) {
 		this.frame = frame;
 		SpringLayout springLayout = new SpringLayout();
 		setLayout(springLayout);
@@ -38,7 +41,7 @@ public class AllPanel extends JPanel {
 		add(backButton);
 		
 
-		Vector<Vector<String>> data = PresentationBO.getDomain();
+		Vector<Vector<String>> data = PresentationBO.getDomain(all);
 		Vector<String> columns = new Vector<String>();
 		columns.add(Constants.COLUMN1);
 		columns.add(Constants.COLUMN2);

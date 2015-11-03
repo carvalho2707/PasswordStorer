@@ -12,6 +12,7 @@ import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 
 import main.java.pt.tiago.passwordstorer.util.Constants;
+import main.java.pt.tiago.passwordstorer.util.SearchType;
 
 public class MainScreenFrame extends JFrame {
 	private static final long serialVersionUID = 1897728166830013009L;
@@ -71,18 +72,54 @@ public class MainScreenFrame extends JFrame {
 		JButton btnAll = new JButton(Constants.BUTTON_ALL);
 		btnAll.setBounds(552, 333, 83, 34);
 		mainPanel.add(btnAll);
+		
+		JButton sigmaButton = new JButton(Constants.BUTTON_SIGMA);
+		sigmaButton.setBounds(210, 378, 101, 34);
+		mainPanel.add(sigmaButton);
+		
+		JButton innowaveButton = new JButton(Constants.BUTTON_INNOWAVE);
+		innowaveButton.setBounds(414, 378, 127, 34);
+		mainPanel.add(innowaveButton);
+		
+		JButton tdcButton = new JButton(Constants.BUTTON_TDC);
+		tdcButton.setBounds(321, 378, 82, 34);
+		mainPanel.add(tdcButton);
 
 		btnAll.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				MainScreenFrame.this.remove(MainScreenFrame.this.mainPanel);
 				MainScreenFrame.this.allPanel = new AllPanel(
-						MainScreenFrame.this);
+						MainScreenFrame.this, SearchType.ALL);
 			}
 		});
+		
+		sigmaButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				MainScreenFrame.this.remove(MainScreenFrame.this.mainPanel);
+				MainScreenFrame.this.allPanel = new AllPanel(
+						MainScreenFrame.this, SearchType.SIGMA);
+			}
+		});
+		
+		innowaveButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				MainScreenFrame.this.remove(MainScreenFrame.this.mainPanel);
+				MainScreenFrame.this.allPanel = new AllPanel(
+						MainScreenFrame.this, SearchType.INW);
+			}
+		});
+		
+		tdcButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				MainScreenFrame.this.remove(MainScreenFrame.this.mainPanel);
+				MainScreenFrame.this.allPanel = new AllPanel(
+						MainScreenFrame.this, SearchType.TDC);
+			}
+		});
+		
 		mainPanel.setVisible(true);
 
 		setVisible(true);
 
 	}
-
 }

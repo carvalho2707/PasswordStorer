@@ -2,9 +2,9 @@ package main.java.pt.tiago.passwordstorer.util;
 
 public class Constants {
 
-	public static final String USERNAMEE = "xxxxx";
-	public static final String PASSWORD = "xxxxx";
-	public static final String KEY = "xxxxxx";
+	public static final String USERNAMEE = "xxx";
+	public static final String PASSWORD = "xxx";
+	public static final String KEY = "xxx";
 	public static final String DEST_PATH = "C:\\Users\\IT People\\Downloads\\WorkspacePessoal\\passwordStorerFile.json";
 	public static final String FILE_PATH = "C:\\Users\\IT People\\Downloads\\WorkspacePessoal\\passwordStorerFile.json";
 	public static final String FILE_PATH_TRUE = "C:\\Users\\IT People\\Downloads\\WorkspacePessoal\\passwordStorerFile.json";
@@ -27,6 +27,9 @@ public class Constants {
 	public static final String BUTTON_BACK = "Back";
 	public static final String BUTTON_CLEAR = "Clear";
 	public static final String BUTTON_ADD = "Add";
+	public static final String BUTTON_SIGMA = "Sigma";
+	public static final String BUTTON_INNOWAVE = "Innowave";
+	public static final String BUTTON_TDC = "TDC";
 
 	public static final String COLUMN1 = "Name";
 	public static final String COLUMN2 = "Username";
